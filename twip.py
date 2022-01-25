@@ -99,6 +99,95 @@ class Twip():
         else:
             raise Exception("Event name must be one of the following: on_donate, on_follow, on_subscribe, on_hosting, on_cheer, on_sound")
     
+    def data_convert(self, data : list):
+        type = data[0]
+        if type == "new donate":
+            value = data[1]
+            Donate = Twip.Donate()
+            
+            Donate.id = value.get("_id")
+            Donate.nickname = value.get("nickname")
+            Donate.amount = value.get("amount")
+            Donate.comment = value.get("comment")
+            Donate.watcher_id = value.get("watcher_id")
+            Donate.subbed = value.get("subbed")
+            Donate.repeat = value.get("repeat")
+            Donate.ttstype = value.get("ttstype")
+            Donate.ttsurl = value.get("ttsurl")
+            Donate.slotmachine.items = value.get("slotmachine_data").get("items")
+            Donate.slotmachine.result = value.get("slotmachine_data").get("gotcha")
+            Donate.slotmachine.sound = value.get("slotmachine_data").get("config").get("sound")
+            Donate.slotmachine.point = value.get("slotmachine_data").get("config").get("point")
+            Donate.slotmachine.duration = value.get("slotmachine_data").get("config").get("duration")
+            Donate.effect = value.get("effect")
+            Donate.variation_id = value.get("variation_id")
+            
+            return Donate
+        
+        elif type == "new follow":
+            value = data[1]
+            Follow = Twip.Follow()
+            
+            Follow.nickname = value.get("nickname")
+            Follow.repeat = value.get("repeat")
+            Follow.variation_id = value.get("variation_id")
+            
+            return Follow
+        
+        elif type == "new sub":
+            value = data[1]
+            Subscribe = Twip.Subscribe()
+            
+            Subscribe.username = value.get("username")
+            Subscribe.months = value.get("months")
+            Subscribe.message = value.get("message")
+            Subscribe.method = value.get("method")
+            Subscribe.repeat = value.get("repeat")
+            Subscribe.variation_id = value.get("variation_id")
+            
+            return Subscribe
+        
+        elif type == "new hosting":
+            value = data[1]
+            Hosting = Twip.Hosting()
+            
+            Hosting.username = value.get("username")
+            Hosting.viewers = value.get("viewers")
+            Hosting.repeat = value.get("repeat")
+            Hosting.variation_id = value.get("variation_id")
+            
+            return Hosting
+        
+        elif type == "new cheer":
+            value = data[1]
+            Cheer = Twip.Cheer()
+            
+            Cheer.nickname = value.get("nickname")
+            Cheer.amount = value.get("amount")
+            Cheer.comment = value.get("comment")
+            Cheer.repeat = value.get("repeat")
+            Cheer.variation_id = value.get("variation_id")
+            
+            return Cheer
+        
+        # The type comes in as 'sound:play' or 'sound:stop'
+        elif type[:6] == "sound:":
+            if len(data) == 2:
+                value = data[1]
+                Sound = Twip.Sound()
+                
+                Sound.type = type[6:]
+                Sound.volume = value.get("volume")
+                Sound.url = value.get("url")
+            else:
+                Sound = Twip.Sound()
+                Sound.type = type[6:]
+                
+            return Sound
+        
+        else:
+            return None
+    
     def on_message(self, wsapp, message):
         # 0 open Sent from the server when a new transport is opened (recheck)
         if message[0] == "0":
