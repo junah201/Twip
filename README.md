@@ -5,7 +5,7 @@
 
 ### Introduction
 
-이 라이브러리는 [twip](www.twip.kr)의 공식 라이브러리가 아니며,  [twip](www.twip.kr)에서 스트리머들에게 제공하는 Alert Box를 이용해서 도네이션, 팔로우, 호스팅 등의 이벤트에 대해서 간편하게 대응하기 위해서 만들어졌습니다.
+이 라이브러리는 [Twip](www.twip.kr)의 공식 라이브러리가 아니며, [Twip](www.twip.kr)에서 스트리머들에게 제공하는 Alert Box를 이용해서 도네이션, 팔로우, 호스팅 등의 이벤트에 대해서 간편하게 대응하기 위해서 만들어졌습니다.
 
 This library is not an official library of twip. It was created to conveniently respond to events such as donation, follow, and hosting using the Alert Box provided by twip to streamers.
 
