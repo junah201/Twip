@@ -121,11 +121,12 @@ class Twip:
             donate.repeat = data_value.get("repeat")
             donate.tts_type = data_value.get("ttstype")
             donate.tts_url = data_value.get("ttsurl")
-            donate.slotmachine.items = data_value.get("slotmachine_data").get("items")
-            donate.slotmachine.result = data_value.get("slotmachine_data").get("gotcha")
-            donate.slotmachine.sound = data_value.get("slotmachine_data").get("config").get("sound")
-            donate.slotmachine.point = data_value.get("slotmachine_data").get("config").get("point")
-            donate.slotmachine.duration = data_value.get("slotmachine_data").get("config").get("duration")
+            if data_value.get("slotmachine_data") != None:
+                donate.slotmachine.items = data_value.get("slotmachine_data").get("items")
+                donate.slotmachine.result = data_value.get("slotmachine_data").get("gotcha")
+                donate.slotmachine.sound = data_value.get("slotmachine_data").get("config").get("sound")
+                donate.slotmachine.point = data_value.get("slotmachine_data").get("config").get("point")
+                donate.slotmachine.duration = data_value.get("slotmachine_data").get("config").get("duration")
             donate.effect = data_value.get("effect")
             donate.variation_id = data_value.get("variation_id")
             

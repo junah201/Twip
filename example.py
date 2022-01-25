@@ -12,8 +12,8 @@ def on_donate(ctx):
     print(f"watcher_id : {ctx.watcher_id}")
     print(f"subbed : {ctx.subbed}")
     print(f"repeat : {ctx.repeat}")
-    print(f"ttstype : {ctx.ttstype}")
-    print(f"ttsurl : {ctx.ttsurl}")
+    print(f"ttstype : {ctx.tts_type}")
+    print(f"ttsurl : {ctx.tts_url}")
     print(f"slotmachine.items : {ctx.slotmachine.items}")
     print(f"slotmachine.result : {ctx.slotmachine.result}")
     print(f"slotmachine.reward_id : {ctx.slotmachine.reward_id}")
@@ -64,4 +64,4 @@ def on_sound(ctx):
     print(f"url : {ctx.url}")
     print(f"volume : {ctx.volume}")
 
-Twip.run("alert box id")
+Twip.run("your alert box id")
