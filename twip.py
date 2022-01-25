@@ -47,6 +47,15 @@ class Twip():
             self.nickname = None
             self.repeat = None
             self.variation_id = None
+            
+    class Subscribe():
+        def __init__(self):
+            self.username = None
+            self.months = None
+            self.message = None
+            self.method = None
+            self.repeat = None
+            self.variation_id = None
     
     def on_message(self, wsapp, message):
         # 0 open Sent from the server when a new transport is opened (recheck)
