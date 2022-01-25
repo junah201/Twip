@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
  
 setup(
-    name                = 'Twip',
+    name                = 'twip',
     version             = '0.0.1',
     description         = 'parses the things provided by twip such as donation, follow',
     author              = 'Junah201',
