@@ -24,7 +24,10 @@ class Twip():
         elif message[:2] == "42":
             result = loads(message[2:])
             if result[0] in self.events.keys():
-                self.events[result[0]](self.data_convert(result))       
+                self.events[result[0]](self.data_convert(result))
+            # The type comes in as 'sound:play' or 'sound:stop'
+            elif result[0][:5] == "sound":
+                self.events[result[0][:5]](self.data_convert(result))
  
     def on_ping(self,wsapp):
         wsapp.send(self.ping_payload)
