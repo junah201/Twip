@@ -41,6 +41,12 @@ class Twip():
                 self.sound = None
                 self.point = None
                 self.duration = None   
+                
+    class Follow():
+        def __init__(self):
+            self.nickname = None
+            self.repeat = None
+            self.variation_id = None
     
     def on_message(self, wsapp, message):
         # 0 open Sent from the server when a new transport is opened (recheck)
