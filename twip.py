@@ -72,6 +72,12 @@ class Twip():
             self.repeat = None
             self.variation_id = None
     
+    class Sound():
+        def __init__(self):
+            self.type = None
+            self.volume = None
+            self.url = None
+    
     def on_message(self, wsapp, message):
         # 0 open Sent from the server when a new transport is opened (recheck)
         if message[0] == "0":
