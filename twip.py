@@ -17,6 +17,31 @@ class Twip():
         self.ping_payload="2"
         self.events = {}
        
+    class Donate():
+        def __init__(self):
+            self.type = "donate"
+            self.id = None
+            self.nickname = None
+            self.amount = None
+            self.comment = None
+            self.watcher_id = None
+            self.subbed = None
+            self.repeat = None
+            self.ttstype = None
+            self.ttsurl = None
+            self.slotmachine = self.Slotmachine()
+            self.effect = None
+            self.variation_id = None
+    
+        class Slotmachine():
+            def __init__(self):
+                self.items = None
+                self.result = None
+                self.reward_id = 2
+                self.sound = None
+                self.point = None
+                self.duration = None   
+    
     def on_message(self, wsapp, message):
         # 0 open Sent from the server when a new transport is opened (recheck)
         if message[0] == "0":
