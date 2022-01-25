@@ -78,6 +78,27 @@ class Twip():
             self.volume = None
             self.url = None
     
+    def event(self, func):
+        if func.__name__[:3] != "on_":
+            raise Exception("Event name must start with 'on_'")
+        self.events[self.event_name_convert(func.__name__)] = func
+    
+    def event_name_convert(self,name:str) -> str:
+        if name == "on_donate":
+            return "new donate"
+        elif name == "on_follow":
+            return "new follow"
+        elif name == "on_subscribe":
+            return "new sub"
+        elif name == "on_hosting":
+            return "new hosting"
+        elif name == "on_cheer":
+            return "new cheer"
+        elif name == "on_sound":
+            return "sound"
+        else:
+            raise Exception("Event name must be one of the following: on_donate, on_follow, on_subscribe, on_hosting, on_cheer, on_sound")
+    
     def on_message(self, wsapp, message):
         # 0 open Sent from the server when a new transport is opened (recheck)
         if message[0] == "0":
