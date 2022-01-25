@@ -32,7 +32,7 @@ def on_donate(ctx):
 Twip.run("your alert box id")
 ```
 
-More examples on github [example.py](https://github.com/junah201/Twip/blob/main/example.py)
+More examples on github [example.py](https://github.com/junah201/Twip/blob/main/twip/example.py)
 
 ## Features
 
