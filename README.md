@@ -12,7 +12,7 @@ This library is not an official library of twip. It was created to conveniently 
 ### Installation
 
 ```shell
-pip install Twip
+pip install twip-api
 ```
 
 ### Examlpe

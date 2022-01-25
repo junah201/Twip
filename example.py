@@ -1,4 +1,4 @@
-import twip
+import Twip.twip as twip
 
 Twip = twip.Twip()
 
