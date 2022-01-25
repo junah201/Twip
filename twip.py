@@ -3,7 +3,7 @@ from json import loads
 from requests import get
 from re import search
 
-class Twip():
+class Twip:
     def __init__(self):
         self.sio = websocket.WebSocketApp(
             None,
@@ -17,7 +17,7 @@ class Twip():
         self.ping_payload="2"
         self.events = {}
        
-    class Donate():
+    class Donate:
         def __init__(self):
             self.type = "donate"
             self.id = None
@@ -33,7 +33,7 @@ class Twip():
             self.effect = None
             self.variation_id = None
     
-        class Slotmachine():
+        class Slotmachine:
             def __init__(self):
                 self.items = None
                 self.result = None
@@ -42,13 +42,13 @@ class Twip():
                 self.point = None
                 self.duration = None   
                 
-    class Follow():
+    class Follow:
         def __init__(self):
             self.nickname = None
             self.repeat = None
             self.variation_id = None
             
-    class Subscribe():
+    class Subscribe:
         def __init__(self):
             self.username = None
             self.months = None
@@ -57,14 +57,14 @@ class Twip():
             self.repeat = None
             self.variation_id = None
     
-    class Hosting():
+    class Hosting:
         def __init__(self):
             self.username = None
             self.viewers = None
             self.repeat = None
             self.variation_id = None
     
-    class Cheer():
+    class Cheer:
         def __init__(self):
             self.nickname = None
             self.amount = None
@@ -72,7 +72,7 @@ class Twip():
             self.repeat = None
             self.variation_id = None
     
-    class Sound():
+    class Sound:
         def __init__(self):
             self.type = None
             self.volume = None
