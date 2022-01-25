@@ -1,5 +1,7 @@
 import websocket
 from json import loads
+from requests import get
+from re import search
 
 class Twip():
     def __init__(self):
@@ -36,3 +38,22 @@ class Twip():
         
     def on_error(self, wsapp, error):
         raise Exception(error)
+    
+    def run(self,id:str):
+        '''id : The back of the twip's alert box url
+        ex) https://twip.kr/widgets/alertbox/1A2B3CXXXX -> 1A2B3CXXXX
+        '''
+        
+        self.id = id
+        response = get(f"https://twip.kr/widgets/alertbox/"+self.id)
+        
+        self.version = search(r"version: '\d{1,3}.\d{1,3}.\d{1,3}',",response.text).group()[10:-2]
+        self.token = search(r"window.__TOKEN__ = '(.+);",response.text).group()[20:-2]
+        
+        self.sio.url = f"wss://io.mytwip.net/socket.io/?alertbox_key={id}&version={self.version}&{parse.urlencode([('token',self.token)], doseq = True)}&transport=websocket"
+        
+        self.sio.run_forever(
+            ping_interval=self.ping_interval,
+            ping_timeout=self.ping_timeout,
+            ping_payload=self.ping_payload
+            )
