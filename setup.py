@@ -1,13 +1,18 @@
 from setuptools import setup, find_packages
- 
+from pathlib import Path
+
+README = open("README.md", 'r', encoding = "utf-8").read()
+
 setup(
-    name                = 'twip',
-    version             = '0.0.1',
+    name                = 'twip-api',
+    version             = '0.0.6',
     description         = 'parses the things provided by twip such as donation, follow',
+    long_description    = README,
+    long_description_content_type = 'text/markdown',
     author              = 'Junah201',
     author_email        = 'junah.dev@gmail.com',
     url                 = 'https://github.com/junah201/Twip',
-    install_requires    =  ["websocket", "requests"],
+    install_requires    =  ["websocket-client", "requests"],
     packages            = find_packages(exclude = []),
     keywords            = ['twip', 'twitch'],
     python_requires     = '>=3',
