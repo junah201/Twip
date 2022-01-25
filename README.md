@@ -1,7 +1,7 @@
 # Project description
 ## Twip
 
-[![PyPI version](https://badge.fury.io/py/Twip.svg)](https://badge.fury.io/py/Twip)
+[![PyPI version](https://badge.fury.io/py/twip-api.svg)](https://badge.fury.io/py/twip-api)
 
 ### Introduction
 
