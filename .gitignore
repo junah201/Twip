@@ -2,3 +2,4 @@ twip_api.egg-info/
 dist/
 build/
 .vscode/
+__pycache__/
