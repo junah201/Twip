@@ -54,6 +54,6 @@ MIT
 
 ## Version
 
-0.0.7 : Fixed bug that occurred when there was no sound event.
-0.0.8 : Convert to receive api key input ([#1](https://github.com/junah201/Twip/issues/1))
-0.0.8.1 : Add token_crawl option ([#1](https://github.com/junah201/Twip/issues/1))
+- 0.0.7 : Fixed bug that occurred when there was no sound event.
+- 0.0.8 : Convert to receive api key input ([#1](https://github.com/junah201/Twip/issues/1))
+- 0.0.8.1 : Add token_crawl option ([#1](https://github.com/junah201/Twip/issues/1))
