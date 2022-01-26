@@ -28,10 +28,19 @@ def on_donate(ctx):
     print(f"amount : {ctx.amount}")
     print(f"comment : {ctx.comment}")
     
-Twip.run("your alert box id")
+Twip.run("your alert box id", "your twip api token"")
 ```
 
 More examples on github [example.py](https://github.com/junah201/Twip/blob/main/twip/example.py)
+
+## Events
+
+- **on_donate** : New Donation, Video, Slotmachines
+- **on_subscribe** : New subscription
+- **on_hosting** : New hosting
+- **on_cheer** : New bits cheer
+- **on_follow** : New follower
+- **on_sound** : Sound (If you do not access the twip alert box you will not receive any sound events.)
 
 ## Features
 
