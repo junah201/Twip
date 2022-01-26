@@ -46,8 +46,8 @@ Twip uses a number of open source projects to work properly:
 - [websocket-client](https://github.com/websocket-client/websocket-client)- It provides access to low level APIs for WebSockets.
 - [requests](https://github.com/psf/requests) - An elegant and simple HTTP library for Python.
 - [urllib](https://docs.python.org/3/library/urllib.html) - A package that collects several modules for working with URLs.
-- [re](https://docs.python.org/3/library/re.html?highlight=re#module-re) - regular expression matching operations.
-
+- [re](https://docs.python.org/3/library/re.html?highlight=re#module-re) - Regular expression matching operations.
+- [warnings](https://docs.python.org/ko/3/library/warnings.html) - Issue warnings by calling the warn() function defined in this module.
 ## License
 
 MIT
@@ -56,3 +56,4 @@ MIT
 
 0.0.7 : Fixed bug that occurred when there was no sound event.
 0.0.8 : Convert to receive api key input ([#1](https://github.com/junah201/Twip/issues/1))
+0.0.8.1 : Add token_crawl option ([#1](https://github.com/junah201/Twip/issues/1))

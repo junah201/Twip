@@ -1,3 +1,4 @@
+from xmlrpc.client import Boolean
 import websocket
 from json import loads
 from requests import get
@@ -221,10 +222,11 @@ class Twip:
     def on_error(self, wsapp, error):
         raise Exception(error)
     
-    def run(self, alert_id: str, api_token: str = None) -> None:
+    def run(self, alert_id: str, api_token: str = None, token_crawl: bool = False) -> None:
         """alert_id : The back of twip's the alert box url
         ex) https://twip.kr/widgets/alertbox/1A2B3CXXXX -> 1A2B3CXXXX
-        api_token : You can get it from the bottom of https://twip.kr/dashboard/security  
+        api_token : You can get it from the bottom of https://twip.kr/dashboard/security 
+        token_crawl : If you don't have api_token, set this to True
         """
         
         self.id = alert_id
@@ -233,9 +235,12 @@ class Twip:
         self.version = search(r"version: '\d{1,3}.\d{1,3}.\d{1,3}',", response.text).group()[10:-2]
         
         if api_token == None:
-            filterwarnings("always")
-            warn("You don't enter api_token so you get token from alert box url. This token has expiration date and is not recommended. Please visit the page below and issue API Token: https://twip.kr/dashboard/security.", Warning)
-            self.token = search(r"window.__TOKEN__ = '(.+);", response.text).group()[20:-2]
+            if token_crawl == True:
+                filterwarnings("always")
+                warn("You don't enter api_token so you get token from alert box url. This token has expiration date and is not recommended. Please visit the page below and issue API Token: https://twip.kr/dashboard/security.", Warning)
+                self.token = search(r"window.__TOKEN__ = '(.+);", response.text).group()[20:-2]
+            else:
+                raise(Exception("You don't enter api_token and token_crawl option is False. Please visit the page below and issue API Token: https://twip.kr/dashboard/security.\n\nIf you want to run with alert_id only, set token_crawl option to True"))
         else:
             self.token = api_token
         

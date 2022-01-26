@@ -5,7 +5,7 @@ README = open("README.md", 'r', encoding = "utf-8").read()
 
 setup(
     name                = 'twip-api',
-    version             = '0.0.8',
+    version             = '0.0.8.1',
     description         = 'Parses the things provided by twip such as donation, follow',
     long_description    = README,
     long_description_content_type = 'text/markdown',
