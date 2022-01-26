@@ -1,4 +1,4 @@
-.twip_api.egg-info/
-.dist/
-.build/
+twip_api.egg-info/
+dist/
+build/
 .vscode/
