@@ -64,4 +64,4 @@ def on_sound(ctx):
     print(f"url : {ctx.url}")
     print(f"volume : {ctx.volume}")
 
-Twip.run("your alert box id")
+Twip.run("your alert box id", "your twip api token")
