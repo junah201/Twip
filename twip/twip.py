@@ -205,7 +205,7 @@ class Twip:
             if result[0] in self.events.keys():
                 self.events[result[0]](self.data_convert(result))
             # The type comes in as 'sound:play' or 'sound:stop'
-            elif result[0][:5] == "sound":
+            elif result[0][:5] in self.events.keys() and result[0][:5] == "sound" :
                 self.events[result[0][:5]](self.data_convert(result))
  
     def on_ping(self, wsapp):
