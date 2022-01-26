@@ -87,7 +87,7 @@ class Twip:
     def event(self, func):
         if func.__name__[:3] != "on_":
             raise Exception("Event name must start with 'on_'")
-        self.events[self.event_name_convert(func.__name__)] = func
+        self.events[self.__event_name_convert(func.__name__)] = func
 
     @staticmethod
     def __event_name_convert(name: str) -> str:
@@ -204,10 +204,10 @@ class Twip:
         elif message[:2] == "42":
             result = loads(message[2:])
             if result[0] in self.events.keys():
-                self.events[result[0]](self.data_convert(result))
+                self.events[result[0]](self.__data_convert(result))
             # The type comes in as 'sound:play' or 'sound:stop'
             elif result[0][:5] in self.events.keys() and result[0][:5] == "sound" :
-                self.events[result[0][:5]](self.data_convert(result))
+                self.events[result[0][:5]](self.__data_convert(result))
  
     def on_ping(self, wsapp):
         wsapp.send(self.ping_payload)
