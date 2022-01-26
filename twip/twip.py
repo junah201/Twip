@@ -89,7 +89,7 @@ class Twip:
         self.events[self.event_name_convert(func.__name__)] = func
 
     @staticmethod
-    def event_name_convert(name: str) -> str:
+    def __event_name_convert(name: str) -> str:
         if name == "on_donate":
             return "new donate"
         elif name == "on_follow":
@@ -106,7 +106,7 @@ class Twip:
             raise Exception("Event name must be one of the following: on_donate, on_follow, on_subscribe, on_hosting, on_cheer, on_sound")
 
     @staticmethod
-    def data_convert(data: list):
+    def __data_convert(data: list):
         data_type = data[0]
         if data_type == "new donate":
             data_value = data[1]
@@ -232,7 +232,7 @@ class Twip:
         self.version = search(r"version: '\d{1,3}.\d{1,3}.\d{1,3}',", response.text).group()[10:-2]
         self.token = search(r"window.__TOKEN__ = '(.+);", response.text).group()[20:-2]
         
-        self.sio.url = f"wss://io.mytwip.net/socket.io/?alertbox_key={alert_id}&version={self.version}&{parse.urlencode([('token',self.token)], doseq = True)}&transport=websocket"
+        self.sio.url = f"wss://io.mytwip.net/socket.io/?alertbox_key={alert_id}&version={self.version}&{parse.urlencode([('token', self.token)], doseq = True)}&transport=websocket"
         
         self.sio.run_forever(
             ping_interval=self.ping_interval,
