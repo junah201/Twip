@@ -52,3 +52,7 @@ Twip uses a number of open source projects to work properly:
 ## License
 
 MIT
+
+## Version
+
+0.0.7 : Fixed bug that occurred when there was no sound event.
