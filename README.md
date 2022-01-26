@@ -45,6 +45,7 @@ More examples on Github [example.py](https://github.com/junah201/Twip/blob/main/
 - **on_follow** : 팔로우
 - **on_sound** : 소리
 
+###
 
 - **on_donate** : New Donation, Video, Slotmachines
 - **on_subscribe** : New subscription
@@ -81,6 +82,7 @@ Twip uses a number of open source projects to work properly:
 - 비동기 설정 추가
 - on_ready 이벤트 추가
 
+###
 
 - Add async option
 - Add on_ready event
