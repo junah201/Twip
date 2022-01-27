@@ -3,6 +3,10 @@ import twip
 Twip = twip.Twip()
 
 @Twip.event
+def on_ready():
+    print("Twip is ready!")
+
+@Twip.event
 def on_donate(ctx):
     print("===on_donate===")
     print(f"id : {ctx.id}")

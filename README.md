@@ -38,6 +38,7 @@ More examples on Github [example.py](https://github.com/junah201/Twip/blob/main/
 
 ## 🔥 Events
 
+- **on_ready** : 트윕과 처음으로 연결되었을 때
 - **on_donate** : 후원, 영상후원, 슬롯머신(룰렛)
 - **on_subscribe** : 구독
 - **on_hosting** : 호스팅
@@ -47,6 +48,7 @@ More examples on Github [example.py](https://github.com/junah201/Twip/blob/main/
 
 ###
 
+- **on_ready** : Connect with twips for the first time
 - **on_donate** : New Donation, Video, Slotmachines
 - **on_subscribe** : New subscription
 - **on_hosting** : New hosting
@@ -77,16 +79,15 @@ Twip uses a number of open source projects to work properly:
 - **[0.0.8](https://pypi.org/project/twip-api/0.0.8/)** : Convert to receive api key input ([#1](https://github.com/junah201/Twip/issues/1))
 - **[0.0.8.1](https://pypi.org/project/twip-api/0.0.8.1/)** : Add token_crawl option ([#1](https://github.com/junah201/Twip/issues/1))
 - **[0.0.8.2](https://pypi.org/project/twip-api/0.0.8.2/)** : Fix function name change error
+- **[0.0.9](https://pypi.org/project/twip-api/0.0.9/)** : Add on_ready event
 
 ## ✔️ To be updated
 
 - 비동기 설정 추가
-- on_ready 이벤트 추가
 
 ###
 
 - Add async option
-- Add on_ready event
 
 
 ## 🕮 License

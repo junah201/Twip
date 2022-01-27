@@ -1,4 +1,3 @@
-from xmlrpc.client import Boolean
 import websocket
 from json import loads
 from requests import get
@@ -22,7 +21,7 @@ class Twip:
         self.ping_timeout = 10
         self.ping_payload = "2"
         self.events = {}
-    
+        self.__is_ready = False
     class Donate:
         def __init__(self):
             self.type = "donate"
@@ -103,8 +102,10 @@ class Twip:
             return "new cheer"
         elif name == "on_sound":
             return "sound"
+        elif name == "on_ready":
+            return "on_ready"
         else:
-            raise Exception("Event name must be one of the following: on_donate, on_follow, on_subscribe, on_hosting, on_cheer, on_sound")
+            raise Exception("Event name must be one of the following: on_donate, on_follow, on_subscribe, on_hosting, on_cheer, on_sound, on_ready")
 
     @staticmethod
     def __data_convert(data: list):
@@ -201,6 +202,10 @@ class Twip:
         # 0 open Sent from the server when new transport is opened (recheck)
         if message[0] == "0":
             wsapp.send(message)
+            #on_ready event
+            if self.__is_ready == False and self.events.get("on_ready") != None:
+                self.events.get("on_ready")()
+                self.__is_ready = True
         elif message[:2] == "42":
             result = loads(message[2:])
             if result[0] in self.events.keys():
@@ -225,7 +230,9 @@ class Twip:
     def run(self, alert_id: str, api_token: str = None, token_crawl: bool = False) -> None:
         """alert_id : The back of twip's the alert box url
         ex) https://twip.kr/widgets/alertbox/1A2B3CXXXX -> 1A2B3CXXXX
+        
         api_token : You can get it from the bottom of https://twip.kr/dashboard/security 
+        
         token_crawl : If you don't have api_token, set this to True
         """
         
