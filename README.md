@@ -75,6 +75,15 @@ Twip uses a number of open source projects to work properly:
 
 ## 📖 Version
 
+- **[0.0.7](https://pypi.org/project/twip-api/0.0.7/)** : 사운드 이벤트가 없을 때 발생하던 버그 수정
+- **[0.0.8](https://pypi.org/project/twip-api/0.0.8/)** : api key를 직접 입력 받도록 수정 ([#1](https://github.com/junah201/Twip/issues/1))
+- **[0.0.8.1](https://pypi.org/project/twip-api/0.0.8.1/)** : 토큰 크롤링 옵션 추가 ([#1](https://github.com/junah201/Twip/issues/1))
+- **[0.0.8.2](https://pypi.org/project/twip-api/0.0.8.2/)** : 함수 이름 관련 버그 수정
+- **[0.0.9](https://pypi.org/project/twip-api/0.0.9/)** : on_ready 이벤트 추가
+- **[0.0.9.1](https://pypi.org/project/twip-api/0.0.9.1/)** : 크롤링된 토큰이 유효기간이 지난 후에도 계속해서 사용되던 버그 수정
+
+###
+
 - **[0.0.7](https://pypi.org/project/twip-api/0.0.7/)** : Fixed bug that occurred when there was no sound event.
 - **[0.0.8](https://pypi.org/project/twip-api/0.0.8/)** : Convert to receive api key input ([#1](https://github.com/junah201/Twip/issues/1))
 - **[0.0.8.1](https://pypi.org/project/twip-api/0.0.8.1/)** : Add token_crawl option ([#1](https://github.com/junah201/Twip/issues/1))
