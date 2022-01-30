@@ -1,3 +1,4 @@
+from lib2to3.pgen2 import token
 import websocket
 from json import loads
 from requests import get
@@ -22,6 +23,8 @@ class Twip:
         self.ping_payload = "2"
         self.events = {}
         self.__is_ready = False
+        self.token_crawl = False
+        
     class Donate:
         def __init__(self):
             self.type = "donate"
@@ -45,14 +48,14 @@ class Twip:
                 self.reward_id = 2
                 self.sound = None
                 self.point = None
-                self.duration = None   
+                self.duration = None
     
     class Follow:
         def __init__(self):
             self.nickname = None
             self.repeat = None
             self.variation_id = None
-            
+
     class Subscribe:
         def __init__(self):
             self.username = None
@@ -218,7 +221,13 @@ class Twip:
         wsapp.send(self.ping_payload)
         
     def on_close(self, wsapp, code, reason):
-        wsapp.run_forever(
+        # Because crawled tokens have time out, set the url to be valid by crawling again.
+        if self.token_crawl == True:
+            response = get(f"https://twip.kr/widgets/alertbox/"+self.id)
+            self.token = search(r"window.__TOKEN__ = '(.+);", response.text).group()[20:-2]
+            self.sio.url = f"wss://io.mytwip.net/socket.io/?alertbox_key={self.id}&version={self.version}&{parse.urlencode([('token', self.token)], doseq = True)}&transport=websocket"
+            
+        self.sio.run_forever(
             ping_interval=self.ping_interval,
             ping_timeout=self.ping_timeout,
             ping_payload=self.ping_payload
@@ -231,7 +240,7 @@ class Twip:
         """alert_id : The back of twip's the alert box url
         ex) https://twip.kr/widgets/alertbox/1A2B3CXXXX -> 1A2B3CXXXX
         
-        api_token : You can get it from the bottom of https://twip.kr/dashboard/security 
+        api_token : You can get it from the bottom of https://twip.kr/dashboard/security
         
         token_crawl : If you don't have api_token, set this to True
         """
@@ -240,6 +249,7 @@ class Twip:
         response = get(f"https://twip.kr/widgets/alertbox/"+self.id)
         
         self.version = search(r"version: '\d{1,3}.\d{1,3}.\d{1,3}',", response.text).group()[10:-2]
+        self.token_crawl = token_crawl
         
         if api_token == None:
             if token_crawl == True:

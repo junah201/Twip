@@ -80,6 +80,7 @@ Twip uses a number of open source projects to work properly:
 - **[0.0.8.1](https://pypi.org/project/twip-api/0.0.8.1/)** : Add token_crawl option ([#1](https://github.com/junah201/Twip/issues/1))
 - **[0.0.8.2](https://pypi.org/project/twip-api/0.0.8.2/)** : Fix function name change error
 - **[0.0.9](https://pypi.org/project/twip-api/0.0.9/)** : Add on_ready event
+- **[0.0.9.1](https://pypi.org/project/twip-api/0.0.9.1/)** : Fixed the problem that crawled tokens were still used after the expiration date
 
 ## ✔️ To be updated
 

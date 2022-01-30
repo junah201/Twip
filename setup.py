@@ -5,7 +5,7 @@ README = open("README.md", 'r', encoding = "utf-8").read()
 
 setup(
     name                = 'twip-api',
-    version             = '0.0.9',
+    version             = '0.0.9.1',
     description         = 'Parses the things provided by twip such as donation, follow',
     long_description    = README,
     long_description_content_type = 'text/markdown',
@@ -20,12 +20,6 @@ setup(
     package_data        = {},
     zip_safe            = False,
     classifiers         = [
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
