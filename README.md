@@ -1,6 +1,6 @@
 # Twip
 
-[![PyPI version](https://badge.fury.io/py/twip-api.svg)](https://badge.fury.io/py/twip-api)
+[![PyPI version](https://badge.fury.io/py/twip-api.svg)](https://badge.fury.io/py/twip-api) ![twip](https://img.shields.io/pypi/dm/twip-api?color=blue)
 
 이 라이브러리는 [Twip](www.twip.kr)의 공식 라이브러리가 아니며, [Twip](www.twip.kr)에서 스트리머들에게 제공하는 Alert Box를 이용해서 도네이션, 팔로우, 호스팅 등의 이벤트에 대해서 간편하게 대응하기 위해서 만들어졌습니다.
 
