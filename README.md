@@ -1,10 +1,8 @@
 # Twip
 
-[![PyPI version](https://badge.fury.io/py/twip-api.svg)](https://badge.fury.io/py/twip-api) ![twip](https://img.shields.io/pypi/dm/twip-api?color=blue)
+[![PyPI version](https://badge.fury.io/py/twip-api.svg)](https://badge.fury.io/py/twip-api) [![Downloads](https://pepy.tech/badge/twip-api)](https://pepy.tech/project/twip-api) [![Downloads](https://pepy.tech/badge/twip-api/month)](https://pepy.tech/project/twip-api)
 
 이 라이브러리는 [Twip](www.twip.kr)의 공식 라이브러리가 아니며, [Twip](www.twip.kr)에서 스트리머들에게 제공하는 Alert Box를 이용해서 도네이션, 팔로우, 호스팅 등의 이벤트에 대해서 간편하게 대응하기 위해서 만들어졌습니다.
-
-This library is not an official library of twip. It was created to conveniently respond to events such as donation, follow, and hosting using the Alert Box provided by twip to streamers.
 
 ------------
 
@@ -34,8 +32,6 @@ Twip.run("your alert box id", "your twip api token"")
 
 더 많은 예제는 Github [example.py](https://github.com/junah201/Twip/blob/main/twip/example.py) 에서 확인하세요.
 
-More examples on Github [example.py](https://github.com/junah201/Twip/blob/main/twip/example.py)
-
 ## 🔥 Events
 
 - **on_ready** : 트윕과 처음으로 연결되었을 때
@@ -46,25 +42,7 @@ More examples on Github [example.py](https://github.com/junah201/Twip/blob/main/
 - **on_follow** : 팔로우
 - **on_sound** : 소리
 
-###
-
-- **on_ready** : Connect with twips for the first time
-- **on_donate** : New Donation, Video, Slotmachines
-- **on_subscribe** : New subscription
-- **on_hosting** : New hosting
-- **on_cheer** : New bits cheer
-- **on_follow** : New follower
-- **on_sound** : Sound (If you do not access the twip alert box you will not receive any sound events.)
-
-## ✨ Features
-
-- Class corresponding to each event element
-- Using Websockets (Not socket.io)
-- Use of decorators
-
 ## 🖥️ Tech
-
-Twip uses a number of open source projects to work properly:
 
 - [websocket-client](https://github.com/websocket-client/websocket-client)- It provides access to low level APIs for WebSockets.
 - [requests](https://github.com/psf/requests) - An elegant and simple HTTP library for Python.
@@ -94,10 +72,6 @@ Twip uses a number of open source projects to work properly:
 ## ✔️ To be updated
 
 - 비동기 설정 추가
-
-###
-
-- Add async option
 
 
 ## 🕮 License
