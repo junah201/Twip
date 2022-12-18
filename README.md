@@ -7,13 +7,13 @@
 ------------
 
 
-## 📥 Installation
+## 📥 설치
 
 ```shell
 pip install twip-api
 ```
 
-## ✍️ Examlpe
+## ✍️ 사용 예시
 
 ```py
 import twip
@@ -60,16 +60,7 @@ Twip.run("your alert box id", "your twip api token"")
 - **[0.0.9](https://pypi.org/project/twip-api/0.0.9/)** : on_ready 이벤트 추가
 - **[0.0.9.1](https://pypi.org/project/twip-api/0.0.9.1/)** : 크롤링된 토큰이 유효기간이 지난 후에도 계속해서 사용되던 버그 수정
 
-###
-
-- **[0.0.7](https://pypi.org/project/twip-api/0.0.7/)** : Fixed bug that occurred when there was no sound event.
-- **[0.0.8](https://pypi.org/project/twip-api/0.0.8/)** : Convert to receive api key input ([#1](https://github.com/junah201/Twip/issues/1))
-- **[0.0.8.1](https://pypi.org/project/twip-api/0.0.8.1/)** : Add token_crawl option ([#1](https://github.com/junah201/Twip/issues/1))
-- **[0.0.8.2](https://pypi.org/project/twip-api/0.0.8.2/)** : Fix function name change error
-- **[0.0.9](https://pypi.org/project/twip-api/0.0.9/)** : Add on_ready event
-- **[0.0.9.1](https://pypi.org/project/twip-api/0.0.9.1/)** : Fixed the problem that crawled tokens were still used after the expiration date
-
-## ✔️ To be updated
+## ✔️ 업데이트 예정
 
 - 비동기 설정 추가
 
@@ -77,3 +68,7 @@ Twip.run("your alert box id", "your twip api token"")
 ## 🕮 License
 
 - [MIT](https://github.com/junah201/Twip/blob/main/LICENSE)
+
+## 기타문의
+
+- Email : junah.dev@gmail.com
