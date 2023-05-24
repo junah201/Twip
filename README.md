@@ -4,8 +4,7 @@
 
 이 라이브러리는 [Twip](www.twip.kr)의 공식 라이브러리가 아니며, [Twip](www.twip.kr)에서 스트리머들에게 제공하는 Alert Box를 이용해서 도네이션, 팔로우, 호스팅 등의 이벤트에 대해서 간편하게 대응하기 위해서 만들어졌습니다.
 
-------------
-
+---
 
 ## 📥 설치
 
@@ -26,7 +25,7 @@ def on_donate(ctx):
     print(f"nickname : {ctx.nickname}")
     print(f"amount : {ctx.amount}")
     print(f"comment : {ctx.comment}")
-    
+
 Twip.run("your alert box id", "your twip api token"")
 ```
 
@@ -42,15 +41,6 @@ Twip.run("your alert box id", "your twip api token"")
 - **on_follow** : 팔로우
 - **on_sound** : 소리
 
-## 🖥️ Tech
-
-- [websocket-client](https://github.com/websocket-client/websocket-client)- It provides access to low level APIs for WebSockets.
-- [requests](https://github.com/psf/requests) - An elegant and simple HTTP library for Python.
-- [urllib](https://docs.python.org/3/library/urllib.html) - A package that collects several modules for working with URLs.
-- [re](https://docs.python.org/3/library/re.html?highlight=re#module-re) - Regular expression matching operations.
-- [warnings](https://docs.python.org/ko/3/library/warnings.html) - Issue warnings by calling the warn() function defined in this module.
-
-
 ## 📖 Version
 
 - **[0.0.7](https://pypi.org/project/twip-api/0.0.7/)** : 사운드 이벤트가 없을 때 발생하던 버그 수정
@@ -63,7 +53,6 @@ Twip.run("your alert box id", "your twip api token"")
 ## ✔️ 업데이트 예정
 
 - 비동기 설정 추가
-
 
 ## 🕮 License
 
