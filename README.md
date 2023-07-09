@@ -12,21 +12,36 @@
 pip install twip-api
 ```
 
-## ✍️ 사용 예시
+## ✍️ Example
 
 ```py
-import twip
+from twip import Twip, Donate, Follow, Subscribe, Hosting, Cheer, Sound, Slotmachine
 
-Twip = twip.Twip()
+class MyTwip(Twip):
+    def on_ready(self):
+        print("Twip is ready!")
 
-@Twip.event
-def on_donate(ctx):
-    print(f"id : {ctx.id}")
-    print(f"nickname : {ctx.nickname}")
-    print(f"amount : {ctx.amount}")
-    print(f"comment : {ctx.comment}")
+    def on_donate(self, donate: Donate):
+        print(donate)
 
-Twip.run("your alert box id", "your twip api token"")
+    def on_follow(self, follow: Follow):
+        print(follow)
+
+    def on_subscribe(self, subscribe: Subscribe):
+        print(subscribe)
+
+    def on_hosting(self, hosting: Hosting):
+        print(hosting)
+
+    def on_cheer(self, cheer: Cheer):
+        print(cheer)
+
+    def on_sound(self, sound: Sound):
+        print(sound)
+
+if __name__ == "__main__":
+    myTwip = MyTwip()
+    myTwip.run("your alert box id", "your twip api token")
 ```
 
 더 많은 예제는 Github [example.py](https://github.com/junah201/Twip/blob/main/twip/example.py) 에서 확인하세요.
@@ -49,10 +64,7 @@ Twip.run("your alert box id", "your twip api token"")
 - **[0.0.8.2](https://pypi.org/project/twip-api/0.0.8.2/)** : 함수 이름 관련 버그 수정
 - **[0.0.9](https://pypi.org/project/twip-api/0.0.9/)** : on_ready 이벤트 추가
 - **[0.0.9.1](https://pypi.org/project/twip-api/0.0.9.1/)** : 크롤링된 토큰이 유효기간이 지난 후에도 계속해서 사용되던 버그 수정
-
-## ✔️ 업데이트 예정
-
-- 비동기 설정 추가
+- **[1.0.0](https://pypi.org/project/twip-api/1.0.0/)** : 타입 힌트 추가 및 구조 개편
 
 ## 🕮 License
 

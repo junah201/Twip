@@ -1,3 +1,3 @@
-name = "twip"
-
 from .twip import *
+
+name = "twip"
